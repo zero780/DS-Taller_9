@@ -1,6 +1,10 @@
 import comportamentales.AutorizadorSRIContext;
 import comportamentales.EsquemaOffline;
 import comportamentales.EsquemaOnline;
+import creacional.ComprobanteElectronico;
+import creacional.Factura;
+import creacional.GuiaRemision;
+import creacional.NotaCredito;
 
 public class Main {
 
@@ -24,7 +28,18 @@ public class Main {
 
         }
 
-        
+        ComprobanteElectronico comprobate;
+
+        //se debe elegir alguna,
+        comprobate = new Factura();
+        autorizador.autorizar(comprobate);
+
+        comprobate = new GuiaRemision();
+        autorizador.autorizar(comprobate);
+
+        comprobate = new NotaCredito();
+        autorizador.autorizar(comprobate);
+
 
     }
 }
