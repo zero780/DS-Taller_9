@@ -17,8 +17,7 @@ public class Main {
         ComprobanteElectronico comp2 = new FooterDecorator(new LogoDecorator(new ComprobanteElectronico()));
         System.out.println(comp2.getDetallesEmisor());
         ComprobanteElectronico comp3 = new FooterDecorator (new ComprobanteElectronico());
-        System.out.println(comp3.getDetallesEmisor());
-           
+        System.out.println(comp3.getDetallesEmisor());  
         //fin
         
         String opcion = "";
@@ -41,14 +40,14 @@ public class Main {
         ComprobanteElectronico comprobate;
 
         //se debe elegir alguna,
-        /*comprobate = new Factura();
+        comprobate = new Factura();
         autorizador.autorizar(comprobate);
 
         comprobate = new GuiaRemision();
         autorizador.autorizar(comprobate);
 
         comprobate = new NotaCredito();
-        autorizador.autorizar(comprobate);*/
+        autorizador.autorizar(comprobate);
         
         
 
