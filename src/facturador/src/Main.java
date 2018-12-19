@@ -1,12 +1,8 @@
-import comportamentales.AutorizadorSRIContext;
 import comportamentales.EsquemaOffline;
 import comportamentales.EsquemaOnline;
 import comportamentales.EsquemaStrategy;
 import creacional.ComprobanteElectronico;
 import creacional.ComprobantesFactory;
-import creacional.Factura;
-import creacional.GuiaRemision;
-import creacional.NotaCredito;
 import estructurales.*;
 import java.util.Scanner;
 
@@ -14,7 +10,7 @@ public class Main {
 
     public static void main(String args[]){
 
-        ComprobantesFactory factory = new ComprobantesFactory();
+ComprobantesFactory factory = new ComprobantesFactory();
         ComprobanteElectronico builder1 = new ComprobanteElectronico();
         EsquemaStrategy autorizador;
         ComprobanteElectronico builder2 = new ComprobanteElectronico();
@@ -97,6 +93,5 @@ public class Main {
 
         }
         System.out.println(builder1);
-        
     }
 }
