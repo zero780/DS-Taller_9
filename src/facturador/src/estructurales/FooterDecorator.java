@@ -20,10 +20,6 @@ public class FooterDecorator extends DetalleDecorator{
         super.getDetallesEmisor().add("Lema de empresa añadido");
     }
 
-    public FooterDecorator() {
-        this.detallesEmisor = new LinkedList<>();
-    }
-    
     @Override
     public List<String> getDetallesEmisor() {
         return this.comprobante.getDetallesEmisor();

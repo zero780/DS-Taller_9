@@ -20,10 +20,6 @@ public class LogoDecorator extends DetalleDecorator{
         super.getDetallesEmisor().add("Logo de empresa añadido");
     }
 
-    public LogoDecorator() {
-        this.detallesEmisor = new LinkedList<>();
-    }
-    
     @Override
     public List<String> getDetallesEmisor() {
         return this.comprobante.getDetallesEmisor();

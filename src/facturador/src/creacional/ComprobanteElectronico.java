@@ -5,6 +5,7 @@
  */
 package creacional;
 
+import comportamentales.EsquemaStrategy;
 import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
@@ -79,6 +80,14 @@ public class ComprobanteElectronico {
 
     public void setClaveAcceso(String claveAcceso) {
         this.claveAcceso = claveAcceso;
+    }
+    
+    public void autorizar(EsquemaStrategy esquema){
+        esquema.autorizar(this);
+    }
+    @Override
+    public String toString() {
+        return "detallesEmisor=" + detallesEmisor + "\nnombreCliente=" + nombreCliente + "\ncodigo=" + codigo + "\nfecha=" + fecha + "\nnumeroAutorizacion=" + numeroAutorizacion + "\nclaveAcceso=" + claveAcceso;
     }
 
     
