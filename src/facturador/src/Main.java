@@ -1,3 +1,4 @@
+import comportamentales.AutorizadorSRIContext;
 import comportamentales.EsquemaOffline;
 import comportamentales.EsquemaOnline;
 import comportamentales.EsquemaStrategy;
@@ -11,9 +12,8 @@ public class Main {
     public static void main(String args[]){
 
 ComprobantesFactory factory = new ComprobantesFactory();
+
         ComprobanteElectronico builder1 = new ComprobanteElectronico();
-        EsquemaStrategy autorizador;
-        ComprobanteElectronico builder2 = new ComprobanteElectronico();
         
         Scanner scan = new Scanner(System.in);
         
@@ -62,20 +62,23 @@ ComprobantesFactory factory = new ComprobantesFactory();
         }
         switch(opc2){
             case 1:
-                builder2 = new LogoDecorator(builder1);
+                new LogoDecorator(builder1);
                 System.out.println("[Ha puesto un logo]");
                 break;
             case 2:
-                builder2 = new FooterDecorator(builder1);
+                new FooterDecorator(builder1);
                 System.out.println("[Ha puesto un lema]");
                 break;
             case 3:
-                builder2 = new LogoDecorator( new FooterDecorator(builder1));
+                new LogoDecorator( new FooterDecorator(builder1));
                 System.out.println("[Ha seleccionado ambas cosas]");
                 break;
         }
         
         //Seleccionar esquema de facturación
+
+        AutorizadorSRIContext autorizador = new AutorizadorSRIContext();
+
         System.out.print("Elegir esquemas de facturación electrónica(ingrese un numero): \n");
         System.out.print("1. Online\n2. Offline\n");
         int opc3 = scan.nextInt();
@@ -85,10 +88,12 @@ ComprobantesFactory factory = new ComprobantesFactory();
         }
         switch(opc3){
             case 1:
-                builder1.autorizar(new EsquemaOnline());
+                autorizador.setEsquema(new EsquemaOnline());
+                autorizador.autorizar(builder1);
                 break;
             case 2:
-                builder1.autorizar(new EsquemaOffline());
+                autorizador.setEsquema(new EsquemaOffline());
+                autorizador.autorizar(builder1);
                 break;
 
         }
